@@ -32,8 +32,9 @@ def check_all_messages(message):
     
     # response
     response(br.greetings(), ['hello', 'hi', 'hey'], single_response=True)
-    # response('I\'m doing fine, and you?', ['how', 'are', 'you', 'doing'], required_words=['how'])
-    response(br.unknown(), ['how', 'are', 'you', 'doing'], required_words=['how'])
+    response(br.feeling(), ['how', 'are', 'you', 'doing'], required_words=['how'])
+    response(br.neutral(), ['i', 'am', 'fine', 'good', 'well'], required_words=['i'])
+    response(br.question(), ['not', 'no', 'nope'], required_words=['not'])
     
     best_match = max(highest_probability_list, key=highest_probability_list.get)
     
